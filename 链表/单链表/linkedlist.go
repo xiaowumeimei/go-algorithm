@@ -55,7 +55,7 @@ func (ll *ItemLinkedList) Insert(i int, t Item) error {
 		return nil
 	}
 	node := ll.head
-	for j := 0; j < i-2; j++ {
+	for j := 0; j < i-1; j++ {
 		node = node.next
 	}
 	addNode.next = node.next
