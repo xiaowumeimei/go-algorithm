@@ -68,7 +68,7 @@ func (ll *ItemLinkedList) Insert(i int, t Item) error {
 func (ll *ItemLinkedList) RemoveAt(i int) (*Item, error) {
 	ll.lock.Lock()
 	defer ll.lock.Unlock()
-	if i < 0 || i > ll.size {
+	if i < 0 || i >= ll.size {
 		return nil, fmt.Errorf("Index out of bounds")
 	}
 	node := ll.head
